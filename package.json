@@ -2,9 +2,6 @@
   "name": "foreign-travel-astrology",
   "version": "1.0.0",
   "description": "Vedic astrology predictions for foreign travel potential and timing",
-  "scripts": {
-    "start": "npx http-server . -p 3000"
-  },
   "keywords": [
     "astrology",
     "vedic", 
