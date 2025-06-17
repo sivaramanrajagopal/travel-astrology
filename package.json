@@ -27,10 +27,11 @@
   },
   "devDependencies": {
     "live-server": "^1.2.2"
+    "terser": "^5.17.7"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sivaramanrajagopal/foreign-travel-astrology.git"
+    "url": "https://github.com/sivaramanrajagopal/travel-astrology"
   },
   "homepage": "https://yourusername.github.io/foreign-travel-astrology"
 }
