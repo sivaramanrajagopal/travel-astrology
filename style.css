@@ -205,7 +205,7 @@ body {
     opacity: 0.95;
     margin-bottom: var(--spacing-sm);
     font-weight: 400;
-    color: #ffffff;
+    color: #8b0;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     filter: brightness(1.1) contrast(1.2)
 }
