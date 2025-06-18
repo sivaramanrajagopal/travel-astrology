@@ -180,7 +180,7 @@ body {
 }
 
 .header .main-title {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     /* FIXED: Changed from 0.65rem to 1.8rem - now properly visible */
     margin-bottom: var(--spacing-sm);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -189,7 +189,7 @@ body {
 }
 
 .header .sub-title {
-    font-size: 1.20rem;
+    font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: var(--spacing-md);
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
@@ -214,34 +214,57 @@ body {
 }
 
 .tab-button {
-    background: var(--hover-overlay-dark);
-    color: var(--text-on-dark);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(44, 62, 80, 0.9);
+    /* ✅ Dark semi-transparent */
+    color: #ffffff;
+    /* ✅ Pure white text */
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    /* ✅ More visible border */
     padding: var(--spacing-md) var(--spacing-lg);
     border-radius: var(--radius-xl);
     cursor: pointer;
     transition: all var(--transition-normal);
-    font-weight: 500;
+    font-weight: 600;
+    /* ✅ Bolder text */
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-sm);
     min-height: 50px;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    /* ✅ Slightly larger */
     text-align: center;
     user-select: none;
     font-family: inherit;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    /* ✅ Text shadow for clarity */
 }
 
 .tab-button:hover {
-    background: var(--active-overlay-dark);
+    background: rgba(44, 62, 80, 0.95);
+    /* ✅ Darker on hover */
     transform: translateY(-1px);
-    border-color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
-.tab-button:active {
-    transform: translateY(0);
+.tab-button.active {
+    background: #ffffff;
+    /* ✅ Pure white when active */
+    color: #2c3e50;
+    /* ✅ Dark text on white */
+    box-shadow: var(--shadow-card);
+    font-weight: 700;
+    /* ✅ Extra bold when active */
+    border-color: #ffffff;
+    text-shadow: none;
+    /* ✅ Remove shadow on white bg */
+}
+
+.tab-button.active:hover {
+    background: #f8f9fa;
+    /* ✅ Light gray hover */
+    color: #2c3e50;
 }
 
 .tab-button.active {
@@ -1120,4 +1143,15 @@ select:hover,
         background: white;
         color: black;
     }
+}
+
+.app-footer-disclaimer {
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 15px 20px;
+    text-align: center;
+    border-top: 2px solid rgba(255, 218, 121, 0.3);
+    margin-top: 40px;
+    border-radius: 15px 15px 0 0;
 }
