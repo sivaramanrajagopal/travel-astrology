@@ -154,14 +154,18 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    background: var(--bg-body);
-    min-height: 100vh;
-    color: var(--text-primary);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #667eea; /* ✅ Solid fallback for mobile and older browsers */
+  background-image: var(--bg-body); /* ✅ Gradient from theme variable */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
 /* ===== CONTAINER AND LAYOUT ===== */
@@ -179,15 +183,15 @@ body {
     color: var(--text-on-dark);
 }
 
+/* === Light Mode - Default === */
 .header .main-title {
     font-size: 1.4rem;
-    /* FIXED: Changed from 0.65rem to 1.8rem - now properly visible */
     margin-bottom: var(--spacing-sm);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     line-height: 1.3;
     font-weight: 600;
-    color: #1a237e;
-    filter: brightness(1.1) contrast(1.2)
+    color: #ffffff;
+    filter: brightness(1.1) contrast(1.2);
 }
 
 .header .sub-title {
@@ -195,9 +199,9 @@ body {
     font-weight: bold;
     margin-bottom: var(--spacing-md);
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-    color: #ffda79;
+    color: #ffd54f;
     line-height: 1.3;
-    filter: brightness(1.1) contrast(1.2)
+    filter: brightness(1.1) contrast(1.2);
 }
 
 .header .tagline {
@@ -205,9 +209,9 @@ body {
     opacity: 0.95;
     margin-bottom: var(--spacing-sm);
     font-weight: 400;
-    color: #8b0;
+    color: #c8e6c9;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-    filter: brightness(1.1) contrast(1.2)
+    filter: brightness(1.1) contrast(1.2);
 }
 
 /* ===== TAB NAVIGATION ===== */
@@ -1140,7 +1144,7 @@ select:hover,
     }
 
     body {
-        background: white;
+        background: yellow;
         color: black;
     }
 
