@@ -2,13 +2,25 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Enhanced mobile viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <!-- Mobile web app capabilities -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="Travel Astrology">
+
         <title>Foreign Travel Astrology - Vedic Predictions</title>
         <link rel="stylesheet" href="style.css" />
         <meta
             name="description"
             content="Discover your foreign travel potential using authentic Vedic astrology principles. Get personalized predictions for the best timing for international journeys."
         />
+
+        <!-- Mobile-optimized favicon -->
+        <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>">
+
         <style>
             .tooltip {
                 position: relative;
@@ -57,15 +69,33 @@
                 margin-left: 5px;
                 font-size: 0.9rem;
             }
+
+            /* Mobile tooltip adjustments */
+            @media (max-width: 768px) {
+                .tooltip .tooltiptext {
+                    width: 240px;
+                    margin-left: -120px;
+                    font-size: 0.8rem;
+                    bottom: 110%;
+                }
+
+                /* Touch-friendly tooltips */
+                .tooltip:active .tooltiptext,
+                .tooltip:focus .tooltiptext {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <header class="header">
                 <div class="logo">
-                    <h1>🌟 Om Maha Ganapathaye Namah</h1>
-                    <h2>🛫 Your Foreign Travel Astrology Guide</h2>
-                    <p>Uncover Your Future Journeys Through the Stars</p>
+                    <!-- Responsive header content -->
+                    <h1 class="main-title">🌟 Om Maha Ganapathaye Namah</h1>
+                    <h2 class="sub-title">🛫 Your Foreign Travel Astrology Guide</h2>
+                    <p class="tagline">Uncover Your Future Journeys Through the Stars</p>
                 </div>
             </header>
 
@@ -74,16 +104,16 @@
                     class="tab-button active"
                     onclick="showTab('basic', this)"
                 >
-                    🏠 Basic Analysis
+                    🏠 <span class="tab-text">Basic Analysis</span>
                 </button>
                 <button class="tab-button" onclick="showTab('advanced', this)">
-                    ⚡ Advanced Combinations
+                    ⚡ <span class="tab-text">Advanced Combinations</span>
                 </button>
                 <button class="tab-button" onclick="showTab('timing', this)">
-                    ⏰ Dasa-Bhukti Timing
+                    ⏰ <span class="tab-text">Dasa-Bhukti Timing</span>
                 </button>
                 <button class="tab-button" onclick="showTab('remedies', this)">
-                    💎 Remedies
+                    💎 <span class="tab-text">Remedies</span>
                 </button>
             </div>
 
@@ -135,14 +165,7 @@
                                     Meena (Pisces) - Ubhaya
                                 </option>
                             </select>
-                            <small
-                                style="
-                                    color: #666;
-                                    font-size: 0.85rem;
-                                    margin-top: 5px;
-                                    display: block;
-                                "
-                            >
+                            <small class="help-text">
                                 💡 <strong>Lagna/Ascendant</strong> is the
                                 zodiac sign rising on the eastern horizon at
                                 your birth time. If unknown, you can use your
@@ -151,10 +174,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label
-                                >Planets in Travel Houses (Check
-                                applicable)</label
-                            >
+                            <label>Planets in Travel Houses (Check applicable)</label>
                             <div class="checkbox-group">
                                 <label class="checkbox-item">
                                     <input
@@ -348,28 +368,14 @@
                             <ul class="factor-list" id="basicFactorList"></ul>
                         </div>
 
-                        <div
-                            class="factors"
-                            style="
-                                background: linear-gradient(
-                                    135deg,
-                                    #667eea,
-                                    #764ba2
-                                );
-                                color: white;
-                            "
-                        >
+                        <div class="factors historical-validation">
                             <h3>⭐ Historical Validation</h3>
-                            <div style="font-size: 0.9rem; line-height: 1.5">
+                            <div class="historical-content">
                                 <p>
-                                    <strong
-                                        >Famous Examples from Classical
-                                        Texts:</strong
-                                    >
+                                    <strong>Famous Examples from Classical Texts:</strong>
                                 </p>
                                 <p>
-                                    📜
-                                    <strong>Indian Freedom Fighters:</strong>
+                                    📜 <strong>Indian Freedom Fighters:</strong>
                                     Most planets in Chara & Dwiswabhava rasis -
                                     Many successful foreign travels
                                 </p>
@@ -386,19 +392,9 @@
                             </div>
                         </div>
 
-                        <div
-                            class="factors"
-                            style="
-                                background: linear-gradient(
-                                    135deg,
-                                    #fd79a8,
-                                    #fdcb6e
-                                );
-                                color: white;
-                            "
-                        >
+                        <div class="factors timing-note">
                             <h3>⏰ Timing is Crucial</h3>
-                            <div style="font-size: 0.9rem; line-height: 1.5">
+                            <div class="timing-content">
                                 <p>
                                     <strong>Important Note:</strong> The
                                     presence of these combinations does not
@@ -418,38 +414,18 @@
                 </div>
 
                 <div id="basicPlaceholder" class="result-card">
-                    <div style="font-size: 3rem; margin-bottom: 20px">🌍</div>
-                    <h3 style="color: #666; margin-bottom: 15px">
-                        Ready to Explore Your Destiny?
-                    </h3>
-                    <p style="color: #999; margin-bottom: 20px">
+                    <div class="placeholder-icon">🌍</div>
+                    <h3 class="placeholder-title">Ready to Explore Your Destiny?</h3>
+                    <p class="placeholder-text">
                         Fill in your astrological details to discover your
                         foreign travel potential according to Vedic astrology
                         principles.
                     </p>
 
-                    <div
-                        style="
-                            background: #f8f9fa;
-                            border-radius: 10px;
-                            padding: 20px;
-                            margin: 20px 0;
-                            text-align: left;
-                        "
-                    >
-                        <h4 style="color: #2c3e50; margin-bottom: 10px">
-                            📚 Key Astrological Foundation:
-                        </h4>
-                        <p
-                            style="
-                                color: #555;
-                                font-size: 0.9rem;
-                                line-height: 1.5;
-                            "
-                        >
-                            <strong
-                                >This app uses Lagna-based calculations</strong
-                            >
+                    <div class="info-box">
+                        <h4>📚 Key Astrological Foundation:</h4>
+                        <p>
+                            <strong>This app uses Lagna-based calculations</strong>
                             as per classical Vedic texts. The 7th, 9th, and 12th
                             houses are counted from your Lagna (Ascendant), not
                             from Moon sign. All combinations like "Lagna Lord in
@@ -484,10 +460,7 @@
                                         name="lordCombination"
                                         value="1st_7th_exchange"
                                     />
-                                    <span
-                                        >1st & 7th Lord Exchange (Former Freedom
-                                        Fighters Yoga)</span
-                                    >
+                                    <span>1st & 7th Lord Exchange (Former Freedom Fighters Yoga)</span>
                                 </label>
                                 <label class="checkbox-item">
                                     <input
@@ -503,10 +476,7 @@
                                         name="lordCombination"
                                         value="7th_lord_foreign_star"
                                     />
-                                    <span
-                                        >7th Lord in Friend's Star (Foreign
-                                        Indication)</span
-                                    >
+                                    <span>7th Lord in Friend's Star (Foreign Indication)</span>
                                 </label>
                                 <label class="checkbox-item">
                                     <input
@@ -538,10 +508,7 @@
                                         name="lordCombination"
                                         value="most_planets_chara"
                                     />
-                                    <span
-                                        >Most Planets in Chara & Ubhaya
-                                        Rasis</span
-                                    >
+                                    <span>Most Planets in Chara & Ubhaya Rasis</span>
                                 </label>
                             </div>
                         </div>
@@ -555,13 +522,12 @@
                                         name="specialYoga"
                                         value="kalasarpa_yoga"
                                     />
-                                    <span
-                                        >Kala Sarpa Yoga Present
+                                    <span>
+                                        Kala Sarpa Yoga Present
                                         <div class="tooltip">
                                             <span class="tooltip-icon">ℹ️</span>
                                             <span class="tooltiptext">
-                                                <strong>Kala Sarpa Yoga:</strong
-                                                ><br />
+                                                <strong>Kala Sarpa Yoga:</strong><br />
                                                 Formed when all seven planets
                                                 (Sun, Moon, Mars, Mercury,
                                                 Jupiter, Venus, Saturn) are
@@ -585,13 +551,12 @@
                                         name="specialYoga"
                                         value="saraswati_yoga"
                                     />
-                                    <span
-                                        >Saraswati Yoga (Education Abroad)
+                                    <span>
+                                        Saraswati Yoga (Education Abroad)
                                         <div class="tooltip">
                                             <span class="tooltip-icon">ℹ️</span>
                                             <span class="tooltiptext">
-                                                <strong>Saraswati Yoga:</strong
-                                                ><br />
+                                                <strong>Saraswati Yoga:</strong><br />
                                                 Formed when Jupiter, Venus, and
                                                 Mercury are in angles (1st, 4th,
                                                 7th, 10th houses), trines (5th,
@@ -614,14 +579,12 @@
                                         name="specialYoga"
                                         value="budha_aditya_yoga"
                                     />
-                                    <span
-                                        >Budha-Aditya Yoga in 9th/12th
+                                    <span>
+                                        Budha-Aditya Yoga in 9th/12th
                                         <div class="tooltip">
                                             <span class="tooltip-icon">ℹ️</span>
                                             <span class="tooltiptext">
-                                                <strong
-                                                    >Budha-Aditya Yoga:</strong
-                                                ><br />
+                                                <strong>Budha-Aditya Yoga:</strong><br />
                                                 Conjunction of Sun and Mercury
                                                 in travel houses (9th or 12th).
                                                 This creates brilliant
@@ -645,14 +608,12 @@
                                         name="specialYoga"
                                         value="gaja_kesari_yoga"
                                     />
-                                    <span
-                                        >Gaja Kesari Yoga in Travel Houses
+                                    <span>
+                                        Gaja Kesari Yoga in Travel Houses
                                         <div class="tooltip">
                                             <span class="tooltip-icon">ℹ️</span>
                                             <span class="tooltiptext">
-                                                <strong
-                                                    >Gaja Kesari Yoga:</strong
-                                                ><br />
+                                                <strong>Gaja Kesari Yoga:</strong><br />
                                                 Formed when Jupiter and Moon are
                                                 in angles (1st, 4th, 7th, 10th)
                                                 from each other. When this
@@ -674,13 +635,12 @@
                                         name="specialYoga"
                                         value="pravasa_yoga"
                                     />
-                                    <span
-                                        >Pravasa Yoga (Travel Combination)
+                                    <span>
+                                        Pravasa Yoga (Travel Combination)
                                         <div class="tooltip">
                                             <span class="tooltip-icon">ℹ️</span>
                                             <span class="tooltiptext">
-                                                <strong>Pravasa Yoga:</strong
-                                                ><br />
+                                                <strong>Pravasa Yoga:</strong><br />
                                                 Specific combinations that
                                                 indicate compulsory residence
                                                 away from birthplace. Formed by
@@ -712,18 +672,15 @@
                         <div class="score-display" id="advancedScore"></div>
                         <div class="factors">
                             <h3>🔍 Advanced Factors</h3>
-                            <ul
-                                class="factor-list"
-                                id="advancedFactorList"
-                            ></ul>
+                            <ul class="factor-list" id="advancedFactorList"></ul>
                         </div>
                     </div>
                 </div>
 
                 <div id="advancedPlaceholder" class="result-card">
-                    <div style="font-size: 3rem; margin-bottom: 20px">⚡</div>
-                    <h3 style="color: #666">Advanced Astrological Analysis</h3>
-                    <p style="color: #999">
+                    <div class="placeholder-icon">⚡</div>
+                    <h3 class="placeholder-title">Advanced Astrological Analysis</h3>
+                    <p class="placeholder-text">
                         Deep dive into complex planetary combinations for
                         precise travel predictions.
                     </p>
@@ -738,41 +695,23 @@
                         <div class="form-group">
                             <label>Current Maha Dasa</label>
                             <select name="mahaDasa" required>
-                                <option value="">
-                                    Select Current Maha Dasa
-                                </option>
-                                <option value="surya">
-                                    Sun (Surya) - 6 years
-                                </option>
-                                <option value="chandra">
-                                    Moon (Chandra) - 10 years
-                                </option>
-                                <option value="kuja">
-                                    Mars (Kuja) - 7 years
-                                </option>
+                                <option value="">Select Current Maha Dasa</option>
+                                <option value="surya">Sun (Surya) - 6 years</option>
+                                <option value="chandra">Moon (Chandra) - 10 years</option>
+                                <option value="kuja">Mars (Kuja) - 7 years</option>
                                 <option value="rahu">Rahu - 18 years</option>
-                                <option value="guru">
-                                    Jupiter (Guru) - 16 years
-                                </option>
-                                <option value="sani">
-                                    Saturn (Sani) - 19 years
-                                </option>
-                                <option value="budha">
-                                    Mercury (Budha) - 17 years
-                                </option>
+                                <option value="guru">Jupiter (Guru) - 16 years</option>
+                                <option value="sani">Saturn (Sani) - 19 years</option>
+                                <option value="budha">Mercury (Budha) - 17 years</option>
                                 <option value="kethu">Ketu - 7 years</option>
-                                <option value="sukra">
-                                    Venus (Sukra) - 20 years
-                                </option>
+                                <option value="sukra">Venus (Sukra) - 20 years</option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label>Current Antar Dasa (Sub-period)</label>
                             <select name="antarDasa" required>
-                                <option value="">
-                                    Select Current Antar Dasa
-                                </option>
+                                <option value="">Select Current Antar Dasa</option>
                                 <option value="surya">Sun (Surya)</option>
                                 <option value="chandra">Moon (Chandra)</option>
                                 <option value="kuja">Mars (Kuja)</option>
@@ -841,9 +780,9 @@
                 </div>
 
                 <div id="timingPlaceholder" class="result-card">
-                    <div style="font-size: 3rem; margin-bottom: 20px">⏰</div>
-                    <h3 style="color: #666">Perfect Timing for Travel</h3>
-                    <p style="color: #999">
+                    <div class="placeholder-icon">⏰</div>
+                    <h3 class="placeholder-title">Perfect Timing for Travel</h3>
+                    <p class="placeholder-text">
                         Discover the most auspicious periods for your foreign
                         journeys based on planetary periods.
                     </p>
@@ -861,9 +800,7 @@
                                 <h4>For Rahu (Strong Foreign Connection)</h4>
                                 <ul>
                                     <li>Wear Hessonite (Gomed) gemstone</li>
-                                    <li>
-                                        Chant "Om Raam Rahave Namah" 108 times
-                                    </li>
+                                    <li>Chant "Om Raam Rahave Namah" 108 times</li>
                                     <li>Donate black lentils on Saturdays</li>
                                     <li>Visit Rahu temples</li>
                                 </ul>
@@ -873,10 +810,7 @@
                                 <h4>For Jupiter (Blessed Travel)</h4>
                                 <ul>
                                     <li>Wear Yellow Sapphire (Pukhraj)</li>
-                                    <li>
-                                        Chant "Om Graam Greem Graum Sah Gurave
-                                        Namah"
-                                    </li>
+                                    <li>Chant "Om Graam Greem Graum Sah Gurave Namah"</li>
                                     <li>Donate yellow items on Thursdays</li>
                                     <li>Feed Brahmins</li>
                                 </ul>
@@ -886,10 +820,7 @@
                                 <h4>For Mercury (Education Abroad)</h4>
                                 <ul>
                                     <li>Wear Emerald (Panna) gemstone</li>
-                                    <li>
-                                        Chant "Om Bram Breem Braum Sah Budhaya
-                                        Namah"
-                                    </li>
+                                    <li>Chant "Om Bram Breem Braum Sah Budhaya Namah"</li>
                                     <li>Donate green items on Wednesdays</li>
                                     <li>Respect teachers and gurus</li>
                                 </ul>
@@ -899,10 +830,7 @@
                                 <h4>For Venus (Luxury & Comfort Abroad)</h4>
                                 <ul>
                                     <li>Wear Diamond or White Sapphire</li>
-                                    <li>
-                                        Chant "Om Draam Dreem Draum Sah Sukraya
-                                        Namah"
-                                    </li>
+                                    <li>Chant "Om Draam Dreem Draum Sah Sukraya Namah"</li>
                                     <li>Donate white items on Fridays</li>
                                     <li>Maintain cleanliness and beauty</li>
                                 </ul>
@@ -912,10 +840,7 @@
                                 <h4>For Saturn (Structured Foreign Life)</h4>
                                 <ul>
                                     <li>Wear Blue Sapphire (Neelam)</li>
-                                    <li>
-                                        Chant "Om Praam Preem Praum Sah Shanaye
-                                        Namah"
-                                    </li>
+                                    <li>Chant "Om Praam Preem Praum Sah Shanaye Namah"</li>
                                     <li>Donate black items on Saturdays</li>
                                     <li>Serve the poor and elderly</li>
                                 </ul>
@@ -925,9 +850,7 @@
                                 <h4>For Mars (Dynamic Foreign Ventures)</h4>
                                 <ul>
                                     <li>Wear Red Coral (Moonga)</li>
-                                    <li>
-                                        Chant "Om Angarakaya Namah" 108 times
-                                    </li>
+                                    <li>Chant "Om Angarakaya Namah" 108 times</li>
                                     <li>Donate red items on Tuesdays</li>
                                     <li>Support military/police personnel</li>
                                 </ul>
@@ -960,10 +883,7 @@
                                 <h4>Spiritual Disciplines</h4>
                                 <ul>
                                     <li>Maintain good karma through service</li>
-                                    <li>
-                                        Avoid non-vegetarian food on auspicious
-                                        days
-                                    </li>
+                                    <li>Avoid non-vegetarian food on auspicious days</li>
                                     <li>Keep fasting on Ekadashi</li>
                                     <li>Practice yoga and meditation</li>
                                 </ul>
@@ -975,31 +895,18 @@
                             <div class="remedy-item">
                                 <h4>Auspicious Timing</h4>
                                 <ul>
-                                    <li>
-                                        Start journeys on auspicious days
-                                        (Pushya, Ashwini nakshatra)
-                                    </li>
+                                    <li>Start journeys on auspicious days (Pushya, Ashwini nakshatra)</li>
                                     <li>Avoid Rahu Kaal for departures</li>
-                                    <li>
-                                        Choose Thursdays or Fridays for visa
-                                        applications
-                                    </li>
-                                    <li>
-                                        Begin travel planning during waxing moon
-                                    </li>
+                                    <li>Choose Thursdays or Fridays for visa applications</li>
+                                    <li>Begin travel planning during waxing moon</li>
                                 </ul>
                             </div>
 
                             <div class="remedy-item">
                                 <h4>Monthly Observances</h4>
                                 <ul>
-                                    <li>
-                                        Fast on Chaturthi for Ganesha's
-                                        blessings
-                                    </li>
-                                    <li>
-                                        Observe Pradosh vrat for Shiva's grace
-                                    </li>
+                                    <li>Fast on Chaturthi for Ganesha's blessings</li>
+                                    <li>Observe Pradosh vrat for Shiva's grace</li>
                                     <li>Perform Satyanarayan puja monthly</li>
                                     <li>Visit temples on full moon days</li>
                                 </ul>
@@ -1011,35 +918,20 @@
                             <div class="remedy-item">
                                 <h4>Temple Visits</h4>
                                 <ul>
-                                    <li>
-                                        Visit Kaal Bhairav temples for Rahu
-                                        remedies
-                                    </li>
+                                    <li>Visit Kaal Bhairav temples for Rahu remedies</li>
                                     <li>Pray at Hanuman temples on Tuesdays</li>
-                                    <li>
-                                        Offer prayers at Ganesha temples before
-                                        important applications
-                                    </li>
-                                    <li>
-                                        Visit Navagraha temples for overall
-                                        planetary balance
-                                    </li>
+                                    <li>Offer prayers at Ganesha temples before important applications</li>
+                                    <li>Visit Navagraha temples for overall planetary balance</li>
                                 </ul>
                             </div>
 
                             <div class="remedy-item">
                                 <h4>Special Rituals</h4>
                                 <ul>
-                                    <li>
-                                        Perform Rudrabhishek for obstacles
-                                        removal
-                                    </li>
+                                    <li>Perform Rudrabhishek for obstacles removal</li>
                                     <li>Organize Sundarkand recitation</li>
                                     <li>Conduct Navagraha Shanti puja</li>
-                                    <li>
-                                        Perform Kala Sarpa Dosha Nivaran if
-                                        applicable
-                                    </li>
+                                    <li>Perform Kala Sarpa Dosha Nivaran if applicable</li>
                                 </ul>
                             </div>
                         </div>
@@ -1049,40 +941,20 @@
                             <div class="remedy-item">
                                 <h4>Primary Gemstones</h4>
                                 <ul>
-                                    <li>
-                                        <strong>Hessonite (Gomed):</strong> For
-                                        Rahu - Foreign connections
-                                    </li>
-                                    <li>
-                                        <strong>Cat's Eye (Lehsunia):</strong>
-                                        For Ketu - Spiritual journeys
-                                    </li>
-                                    <li>
-                                        <strong>Yellow Sapphire:</strong> For
-                                        Jupiter - Blessed travels
-                                    </li>
-                                    <li>
-                                        <strong>Emerald:</strong> For Mercury -
-                                        Educational pursuits
-                                    </li>
+                                    <li><strong>Hessonite (Gomed):</strong> For Rahu - Foreign connections</li>
+                                    <li><strong>Cat's Eye (Lehsunia):</strong> For Ketu - Spiritual journeys</li>
+                                    <li><strong>Yellow Sapphire:</strong> For Jupiter - Blessed travels</li>
+                                    <li><strong>Emerald:</strong> For Mercury - Educational pursuits</li>
                                 </ul>
                             </div>
 
                             <div class="remedy-item">
                                 <h4>Wearing Guidelines</h4>
                                 <ul>
-                                    <li>
-                                        Consult qualified astrologer before
-                                        wearing
-                                    </li>
-                                    <li>
-                                        Ensure proper purification and
-                                        energization
-                                    </li>
+                                    <li>Consult qualified astrologer before wearing</li>
+                                    <li>Ensure proper purification and energization</li>
                                     <li>Wear on appropriate finger and day</li>
-                                    <li>
-                                        Choose natural, unheated stones only
-                                    </li>
+                                    <li>Choose natural, unheated stones only</li>
                                 </ul>
                             </div>
                         </div>
@@ -1090,35 +962,17 @@
                 </div>
 
                 <div id="remediesPlaceholder" class="result-card">
-                    <div style="font-size: 3rem; margin-bottom: 20px">💎</div>
-                    <h3 style="color: #666">Enhance Your Travel Luck</h3>
-                    <p style="color: #999">
+                    <div class="placeholder-icon">💎</div>
+                    <h3 class="placeholder-title">Enhance Your Travel Luck</h3>
+                    <p class="placeholder-text">
                         Discover powerful Vedic remedies to strengthen your
                         foreign travel possibilities and remove obstacles.
                     </p>
 
-                    <div
-                        style="
-                            background: #f8f9fa;
-                            border-radius: 10px;
-                            padding: 20px;
-                            margin: 20px 0;
-                            text-align: left;
-                        "
-                    >
-                        <h4 style="color: #2c3e50; margin-bottom: 10px">
-                            🔮 Remedy Philosophy:
-                        </h4>
-                        <p
-                            style="
-                                color: #555;
-                                font-size: 0.9rem;
-                                line-height: 1.5;
-                            "
-                        >
-                            <strong
-                                >Vedic remedies work on multiple levels:</strong
-                            >
+                    <div class="info-box">
+                        <h4>🔮 Remedy Philosophy:</h4>
+                        <p>
+                            <strong>Vedic remedies work on multiple levels:</strong>
                             They purify karma, strengthen beneficial planetary
                             influences, and create positive energy that attracts
                             opportunities. Consistency and faith are key to
